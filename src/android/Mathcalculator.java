@@ -14,19 +14,53 @@ public class Mathcalculator extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("coolMethod")) {
-            String message = args.getString(0);
-            this.coolMethod(message, callbackContext);
-            return true;
-        }
+       if(action.equals("add"))
+       {
+           this.add(arg,callbackContext);
+           return true;
+       }else if(action.equals("substract")) 
+       {
+           this.substract(arg,callbackContext);
+           return true;
+       }
         return false;
     }
 
-    private void coolMethod(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message);
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
+    
+    private void add(JSONArray arg0,callbackContext callback)
+    {
+        if(arg != null)
+        {
+            try
+        {
+            int p1 = Integer.parsInt(args.getJSONObject(0).getString("param1"));
+            int p2 = Integer.parsInt(args.getJSONObject(0).getString("param2"));
+            callback.success(""+(p1+p2));
+        }catch(exception ex)
+        {
+            callback.error("something went wrong"+ex)
         }
+        }else{
+            callback.error("pls do not pass null value")
+        }
+
+    }
+    private void  (JSONArray arg0,callbackContext callback)
+    {
+        if(arg != null)
+        {
+            try
+        {
+            int p1 = Integer.parsInt(args.getJSONObject(0).getString("param1"));
+            int p2 = Integer.parsInt(args.getJSONObject(0).getString("param2"));
+            callback.success(""+(p1-p2));
+        }catch(exception ex)
+        {
+            callback.error("something went wrong"+ex)
+        }
+        }else{
+            callback.error("pls do not pass null value")
+        }
+
     }
 }
