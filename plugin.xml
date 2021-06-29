@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-mathcalculator" version="3.0.1">
+   <name>Mathcalculator</name>
+   <js-module name="Mathcalculator" src="www/Mathcalculator.js">
+      <clobbers target="cordova.plugins.Mathcalculator" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="Mathcalculator">
+            <param name="android-package" value="cordova-plugin-mathcalculator.Mathcalculator" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/Mathcalculator.java" target-dir="src/cordova-plugin-mathcalculator/Mathcalculator" />
+   </platform>
+   <platform name="ios">
+      <config-file parent="/*" target="config.xml">
+         <feature name="Mathcalculator">
+            <param name="ios-package" value="Mathcalculator" />
+         </feature>
+      </config-file>
+      <source-file src="src/ios/Mathcalculator.m" />
+   </platform>
+</plugin>
