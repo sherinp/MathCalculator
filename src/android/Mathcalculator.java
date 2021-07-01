@@ -16,20 +16,20 @@ public class Mathcalculator extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
        if(action.equals("add"))
        {
-           this.add(arg,callbackContext);
+           this.add(args,callbackContext);
            return true;
        }else if(action.equals("substract")) 
        {
-           this.substract(arg,callbackContext);
+           this.substract(args,callbackContext);
            return true;
        }
         return false;
     }
 
     
-    private void add(JSONArray arg0,callbackContext callback)
+    private void add(JSONArray args,CallbackContext callback)
     {
-        if(arg != null)
+        if(args != null)
         {
             try
         {
@@ -45,9 +45,9 @@ public class Mathcalculator extends CordovaPlugin {
         }
 
     }
-    private void substract(JSONArray arg0,callbackContext callback)
+    private void substract(JSONArray args,CallbackContext callback)
     {
-        if(arg != null)
+        if(args != null)
         {
             try
         {
