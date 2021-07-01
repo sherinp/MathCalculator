@@ -36,7 +36,7 @@ public class Mathcalculator extends CordovaPlugin {
             int p1 = Integer.parsInt(args.getJSONObject(0).getString("param1"));
             int p2 = Integer.parsInt(args.getJSONObject(0).getString("param2"));
             callback.success(""+(p1+p2));
-        }catch(exception ex)
+        }catch(Exception ex)
         {
             callback.error("something went wrong"+ex);
         }
@@ -54,7 +54,7 @@ public class Mathcalculator extends CordovaPlugin {
             int p1 = Integer.parsInt(args.getJSONObject(0).getString("param1"));
             int p2 = Integer.parsInt(args.getJSONObject(0).getString("param2"));
             callback.success(""+(p1-p2));
-        }catch(exception ex)
+        }catch(Exception ex)
         {
             callback.error("something went wrong"+ex);
         }
