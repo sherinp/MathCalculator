@@ -38,14 +38,14 @@ public class Mathcalculator extends CordovaPlugin {
             callback.success(""+(p1+p2));
         }catch(exception ex)
         {
-            callback.error("something went wrong"+ex)
+            callback.error("something went wrong"+ex);
         }
         }else{
-            callback.error("pls do not pass null value")
+            callback.error("pls do not pass null value");
         }
 
     }
-    private void  (JSONArray arg0,callbackContext callback)
+    private void substract(JSONArray arg0,callbackContext callback)
     {
         if(arg != null)
         {
@@ -56,10 +56,10 @@ public class Mathcalculator extends CordovaPlugin {
             callback.success(""+(p1-p2));
         }catch(exception ex)
         {
-            callback.error("something went wrong"+ex)
+            callback.error("something went wrong"+ex);
         }
         }else{
-            callback.error("pls do not pass null value")
+            callback.error("pls do not pass null value");
         }
 
     }
